@@ -1,4 +1,8 @@
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -8,18 +12,18 @@ import CreateMeet from "./screens/tabScreens/CreateMeet";
 import Saved from "./screens/tabScreens/Saved";
 import HomeDetailsScreen from "./screens/homeStack/MeetDetailsScreen";
 import Notifications from "./screens/tabScreens/Notifications";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import Settings from "./screens/drawerScreens/Settings";
+import { Pressable, Text, useColorScheme } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 // Stack
 const HomeStack = createNativeStackNavigator();
 
 function HomeStackGroup() {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen
-        name="TabGroup"
-        component={TabGroup}
-        options={{ headerShown: false }}
-      />
+    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+      <HomeStack.Screen name="TabGroup" component={TabGroup} />
       <HomeStack.Screen
         name="HomeDetailsScreen"
         component={HomeDetailsScreen}
@@ -35,7 +39,7 @@ const Tab = createBottomTabNavigator();
 function TabGroup() {
   return (
     <Tab.Navigator
-      screenOptions={({ route, navigation }) => ({
+      screenOptions={({ route }) => ({
         tabBarIcon: ({ color, focused, size }) => {
           let iconName;
           if (route.name === "Home") {
@@ -76,10 +80,31 @@ function TabGroup() {
   );
 }
 
-export default function Navigation() {
+// Drawer
+const Drawer = createDrawerNavigator();
+
+function DrawerGroup() {
   return (
-    <NavigationContainer>
-      <HomeStackGroup />
+    <Drawer.Navigator screenOptions={{ headerShown: false }}>
+      <Drawer.Screen name="HomeStackGroup" component={HomeStackGroup} />
+      <Drawer.Screen
+        name="Settings"
+        component={Settings}
+        options={{ headerShown: true }}
+      />
+    </Drawer.Navigator>
+  );
+}
+
+export default function AppNavigation() {
+  const currentTheme = useColorScheme();
+
+  return (
+    <NavigationContainer
+      theme={currentTheme === "dark" ? DarkTheme : DefaultTheme}
+    >
+      <StatusBar style="auto" />
+      <DrawerGroup />
     </NavigationContainer>
   );
 }
