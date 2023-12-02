@@ -42,6 +42,7 @@ function TabGroup() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, focused, size }) => {
           let iconName;
+          size = 27;
           if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "Explore") {
@@ -59,7 +60,7 @@ function TabGroup() {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
 
-        tabBarActiveTintColor: "#5D3FD3",
+        tabBarActiveTintColor: "#753dff",
         tabBarInactiveTintColor: "gray",
         tabBarShowLabel: false,
         headerShown: false,
