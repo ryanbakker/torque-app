@@ -16,14 +16,18 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rbakker02.torque"
+      "bundleIdentifier": "com.rbakker02.torque",
+      "config": {
+        "googleMapsApiKey": "AIzaSyDh5V9NYBp9jkzmWkkN5sMYkOjBcKN3CNw"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rbakker02.torque"
+      "package": "com.rbakker02.torque",
+      "googleMapsApiKey": "AIzaSyDh5V9NYBp9jkzmWkkN5sMYkOjBcKN3CNw"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +37,14 @@
         "projectId": "bb52f43d-e602-4346-bca1-90794c384052"
       }
     },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Torque to use your location."
+        }
+      ]
+    ],
     "scheme": "torque"
   }
 }

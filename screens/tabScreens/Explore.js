@@ -1,9 +1,10 @@
-import { Text, View, SafeAreaView } from "react-native";
+import { View } from "react-native";
+import MapViewFull from "../../components/Explore/MapViewFull";
 
 export default function Explore() {
   return (
-    <SafeAreaView>
-      <Text>Explore Map</Text>
-    </SafeAreaView>
+    <View>
+      <MapViewFull />
+    </View>
   );
 }
