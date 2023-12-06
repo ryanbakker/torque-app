@@ -91,4 +91,6 @@ This is my first big React Native Expo app, and torque is a long-term project ai
 
   <img width="250" height="auto" alt="torque explore map" src="https://github.com/ryanbakker/torque-app/assets/112455939/b05928ff-956f-445b-949c-b64cee156113">
 
+  <img width="250" height="auto" alt="torque explore map light" src="https://github.com/ryanbakker/torque-app/assets/112455939/8e3d134f-ec09-4280-8458-a6b5319a8231">
+
 </div>
