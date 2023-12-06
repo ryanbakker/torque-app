@@ -21,6 +21,3 @@ const auth = getAuth(app);
 export const usersRef = collection(db, "users");
 
 export { db, storage, auth };
-
-// IOS: 351964922129-aaj7t8allpeonrv3u5copigra17s8bvo.apps.googleusercontent.com
-// AND: 351964922129-cc2cjhidif7tqmle25kei6ok8nutjodi.apps.googleusercontent.com

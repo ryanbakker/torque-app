@@ -8,14 +8,17 @@ import {
   StyleSheet,
   Image,
   View,
+  Button,
 } from "react-native";
 import { auth } from "../../firebaseConfig";
 import Colors from "../../Shared/Colors";
 import Logo from "./../../assets/logos/colour_full.png";
 import Greeting from "../../components/Home/Greeting";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { signOut } from "firebase/auth";
 
 export default function Home() {
-  const naviation = useNavigation();
+  const navigation = useNavigation();
   const theme = useColorScheme();
   const user = auth;
   const userImage = user.currentUser?.photoURL;
@@ -40,25 +43,19 @@ export default function Home() {
           // { backgroundColor: theme === "dark" ? "#121424" : "white" },
         ]}
       >
-        <TouchableOpacity
-          onPress={() => {
-            navigate("HomeDetailsScreen");
-          }}
+        <Pressable
+          onPress={() => navigation.navigate("Profile")}
+          style={styles.userButton}
         >
-          <Pressable
-            onPress={() => naviation.openDrawer()}
-            style={styles.userButton}
-          >
-            <Image
-              source={{ uri: userImage }}
-              style={{
-                height: 40,
-                width: 40,
-                borderRadius: 100,
-              }}
-            />
-          </Pressable>
-        </TouchableOpacity>
+          <Image
+            source={{ uri: userImage }}
+            style={{
+              height: 40,
+              width: 40,
+              borderRadius: 100,
+            }}
+          />
+        </Pressable>
 
         <View style={{ marginLeft: "auto" }}>
           <Image source={Logo} style={styles.mainLogo} />
@@ -71,6 +68,13 @@ export default function Home() {
         <Text style={[{ color: theme === "dark" ? "#FFF" : "#000" }]}>
           This is the body
         </Text>
+        <Button
+          title="Sign Out"
+          onPress={async () => {
+            await signOut(auth);
+            await AsyncStorage.removeItem("@user");
+          }}
+        />
       </View>
     </View>
   );

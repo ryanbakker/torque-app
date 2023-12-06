@@ -71,6 +71,7 @@ function App() {
         setUserInfo(user);
 
         // Check if the user already exists in Firestore
+        const usersRef = collection(db, "users");
         const q = query(usersRef, where("userId", "==", user.uid));
         const querySnapshot = await getDocs(q);
 

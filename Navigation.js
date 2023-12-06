@@ -16,6 +16,8 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Settings from "./screens/drawerScreens/Settings";
 import { Pressable, Text, useColorScheme } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import Profile from "./screens/tabScreens/Profile";
+import Colors from "./Shared/Colors";
 
 // Stack
 const HomeStack = createNativeStackNavigator();
@@ -49,12 +51,10 @@ function TabGroup() {
             iconName = focused ? "ios-search-sharp" : "ios-search-sharp";
           } else if (route.name === "CreateMeet") {
             iconName = focused ? "add-circle" : "add-circle-outline";
-          } else if (route.name === "Notifications") {
-            iconName = focused
-              ? "ios-notifications"
-              : "ios-notifications-outline";
           } else if (route.name === "Saved") {
             iconName = focused ? "ios-heart" : "ios-heart-outline";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "person-circle" : "person-circle-outline";
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -75,8 +75,8 @@ function TabGroup() {
       />
       <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="CreateMeet" component={CreateMeet} />
-      <Tab.Screen name="Notifications" component={Notifications} />
       <Tab.Screen name="Saved" component={Saved} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }
@@ -86,8 +86,14 @@ const Drawer = createDrawerNavigator();
 
 function DrawerGroup() {
   return (
-    <Drawer.Navigator screenOptions={{ headerShown: false }}>
-      <Drawer.Screen name="HomeStackGroup" component={HomeStackGroup} />
+    <Drawer.Navigator
+      screenOptions={{
+        headerShown: false,
+        drawerLabelStyle: { color: Colors.purpleHighlight, fontSize: 16 },
+        drawerActiveTintColor: Colors.purpleTint,
+      }}
+    >
+      <Drawer.Screen name="Home" component={HomeStackGroup} />
       <Drawer.Screen
         name="Settings"
         component={Settings}
