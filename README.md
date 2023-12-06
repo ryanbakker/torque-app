@@ -78,7 +78,7 @@ This is my first big React Native Expo app, and torque is a long-term project ai
 <h4 style="font-family: 'Familjen Grotesk', sans-serif; font-size: 15px">
   Stay tuned for updates and new features as torque evolves!
 </h4>
-<br/>
+
 <hr/>
 
 <h3 style="font-family: 'Familjen Grotesk', sans-serif; font-size: 25px">
