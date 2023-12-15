@@ -66,6 +66,18 @@ export const lightMapStyle = [
     ],
   },
   {
+    featureType: "poi.medical",
+    elementType: "geometry.fill",
+    stylers: [
+      {
+        color: "#f0d5d5",
+      },
+      {
+        visibility: "on",
+      },
+    ],
+  },
+  {
     featureType: "poi.park",
     elementType: "geometry.fill",
     stylers: [
@@ -106,10 +118,10 @@ export const lightMapStyle = [
     elementType: "geometry.fill",
     stylers: [
       {
-        color: "#fac9a9",
+        visibility: "simplified",
       },
       {
-        visibility: "simplified",
+        color: "#fac9a9",
       },
     ],
   },
@@ -146,6 +158,39 @@ export const lightMapStyle = [
     stylers: [
       {
         visibility: "simplified",
+      },
+    ],
+  },
+  {
+    featureType: "transit.line",
+    elementType: "geometry.fill",
+    stylers: [
+      {
+        visibility: "on",
+      },
+      {
+        color: "#bdd5ec",
+      },
+    ],
+  },
+  {
+    featureType: "transit.line",
+    elementType: "geometry.stroke",
+    stylers: [
+      {
+        visibility: "simplified",
+      },
+      {
+        color: "#eaeaf2",
+      },
+    ],
+  },
+  {
+    featureType: "transit.line",
+    elementType: "labels.text",
+    stylers: [
+      {
+        visibility: "off",
       },
     ],
   },
@@ -231,6 +276,10 @@ export const lightMapStyle = [
     ],
   },
 ];
+
+// ! Dark Mode
+
+// Check medical colour
 
 export const darkMapStyle = [
   {
