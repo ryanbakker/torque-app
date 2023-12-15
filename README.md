@@ -78,7 +78,7 @@ This is my first big React Native Expo app, and torque is a long-term project ai
 <h4 style="font-family: 'Familjen Grotesk', sans-serif; font-size: 15px">
   Stay tuned for updates and new features as torque evolves!
 </h4>
-<br/>
+
 <hr/>
 
 <h3 style="font-family: 'Familjen Grotesk', sans-serif; font-size: 25px">
@@ -90,5 +90,7 @@ This is my first big React Native Expo app, and torque is a long-term project ai
   <img width="250" height="auto" alt="torque sign-in" src="https://github.com/ryanbakker/torque-app/assets/112455939/c5e1574a-86bf-455e-acf7-45a26023329f">
 
   <img width="250" height="auto" alt="torque explore map" src="https://github.com/ryanbakker/torque-app/assets/112455939/b05928ff-956f-445b-949c-b64cee156113">
+
+  <img width="250" height="auto" alt="torque explore map light" src="https://github.com/ryanbakker/torque-app/assets/112455939/8e3d134f-ec09-4280-8458-a6b5319a8231">
 
 </div>
